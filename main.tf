@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "mykey" {
-    key_name = "mykey"
+    key_name = var.key_name
     public_key = "${file(var.path_to_public_key)}"
 }
 
@@ -14,7 +14,7 @@ resource "aws_instance" "example" {
    instance_type = "t2.micro"
    key_name = aws_key_pair.mykey.key_name
    tags = {
-     Name = "HelloWorld"
+     Name = var.mytag
    }
 }
 

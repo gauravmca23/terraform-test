@@ -14,3 +14,8 @@ variable "ami_id" {
 variable "path_to_public_key" {
 default = "mykey.pub"
 }
+variable "key_name" {
+}
+
+variable "mytag" {
+}
